@@ -46,9 +46,9 @@
             </div>
             <div class="col col-6 ">
                 <ul class="list-unstyled d-flex justify-content-center primary-menu mt-3">
-                    <li class="px-2"><a href="#" class="btn btn-success btn-lg px-4 py-3" role="button">Home</a></li>
+                    <li class="px-2"><a href="index.php" class="btn btn-success btn-lg px-4 py-3" role="button">Home</a></li>
                     <li class="px-2"><a href="#" class="btn btn-success btn-lg px-4 py-3" role="button">About us</a></li>
-                    <li class="px-2"><a href="#" class="btn btn-success btn-lg px-4 py-3" role="button">Shop</a></li>
+                    <li class="px-2"><a href="shop.php" class="btn btn-success btn-lg px-4 py-3" role="button">Shop</a></li>
                     <li class="px-2"><a href="#" class="btn btn-success btn-lg px-4 py-3" role="button">Vendors</a></li>
                     <li class="px-2"><a href="#" class="btn btn-success btn-lg px-4 py-3" role="button">Contact us</a></li>
                 </ul>
