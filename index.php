@@ -59,10 +59,10 @@
                             <img class="img-fluid" src="images/banners/1.png" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="images/banners/5.png" alt="Second slide">
+                            <img class="img-fluid" src="images/banners/5.png" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="images/banners/2.png" alt="Third slide">
+                            <img class="img-fluid" src="images/banners/2.png" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
