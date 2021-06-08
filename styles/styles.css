@@ -89,20 +89,16 @@ h2 {
   color: white;
   cursor: default;
 }
-.hero {
-  min-width: 60vh;
-}
+
 .hero .col {
   padding: 0;
 }
 .hero {
   padding-top: 10px;
 }
-.carousel-item img {
-  max-height: 375px;
-  object-fit: cover;
+.carousel-item .img-fluid {
+  max-width: inherit !important;
 }
-
 .category-title {
   background-color: #4caf50;
   padding: 10px 0;
