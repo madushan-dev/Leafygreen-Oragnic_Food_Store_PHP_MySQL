@@ -86,7 +86,7 @@
 
         <div class="product-row">
             <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+                <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
                 <small>
                     <h4 class="row-category">Spices</h4>
                 </small>
