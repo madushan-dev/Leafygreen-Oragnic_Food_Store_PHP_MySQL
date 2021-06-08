@@ -12,3 +12,209 @@ html {
 body {
   font-family: "Poppins", sans-serif;
 }
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.row {
+  width: 80%;
+  margin: auto;
+}
+
+.space {
+  margin-top: 50px;
+}
+
+.top-header,
+.bottom-header {
+  background-color: #4caf50;
+  min-height: 4vh;
+  color: white;
+  padding: 15px 0px;
+}
+.top-header .container {
+  width: 80%;
+}
+.top-header .fa {
+  padding: 0 10px;
+  cursor: pointer;
+  font-size: 2.2rem;
+}
+.main-header {
+  min-height: 10vh;
+}
+.nav-brand img {
+  width: 150px;
+  object-fit: cover;
+}
+
+.bottom-header option,
+.bottom-header .form-select,
+.bottom-header input {
+  font-size: 1.5rem;
+}
+.primary-menu li a {
+  font-size: 1.7rem;
+  border-radius: 8px;
+}
+
+.tool-box a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.7rem;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.tool-box li {
+  margin-right: 2px;
+  border-right: 1px solid #ccc;
+}
+.tool-box li:last-child {
+  border-right: none;
+}
+.tool-box a:hover,
+.tool-box a:focus {
+  color: green;
+}
+.tool-box .fa {
+  padding-right: 10px;
+}
+
+.main-categories button {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+.main-categories .title {
+  color: white;
+  cursor: default;
+}
+.hero {
+  min-width: 60vh;
+}
+.hero .col {
+  padding: 0;
+}
+.hero {
+  padding-top: 10px;
+}
+.carousel-item img {
+  max-height: 375px;
+  object-fit: cover;
+}
+
+.category-title {
+  background-color: #4caf50;
+  padding: 10px 0;
+  border-radius: 10px;
+  color: white;
+}
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.product-row div {
+  width: 23%;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 10px rgba(199, 199, 199, 1);
+  transition: 0.5s;
+}
+
+.product-row div:hover {
+  transform: translate(0px, -10px);
+}
+
+.product-row div img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.row-category {
+  background-color: green;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  width: auto;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  width: 40%;
+  color: white;
+}
+.row-title {
+  font-weight: bold;
+  padding: 5px 0;
+}
+.row-description {
+  font-size: 1.5rem;
+  color: rgb(70, 67, 67);
+  padding-bottom: 5px;
+}
+.row-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.add-to-cart {
+  font-size: 1.5rem !important;
+}
+
+.footer button {
+  background-color: green;
+}
+.footer {
+  background-color: green;
+  padding-top: 30px;
+  margin-top: 50px;
+}
+.footer .fa {
+  font-size: 2.5rem;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.footer .fa:hover {
+  color: #ccc;
+}
+.footer .row {
+  padding: 30px 0;
+}
+
+.footer-bar {
+  min-height: 4vh;
+}
+.footer button {
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.footer .col {
+  border-right: 1px solid #ccc;
+  padding-left: 30px;
+}
+.footer .col:last-child {
+  border-right: none;
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 20px !important;
+  padding: 10px 0px;
+  cursor: default;
+}
+.footer-title:hover {
+  cursor: default;
+  background-color: green;
+  color: white;
+}
+.footer-bar {
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
