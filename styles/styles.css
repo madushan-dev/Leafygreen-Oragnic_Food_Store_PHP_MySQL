@@ -54,6 +54,11 @@ h2 {
 .bottom-header input {
   font-size: 1.5rem;
 }
+.page-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
 .primary-menu li a {
   font-size: 1.7rem;
   border-radius: 8px;
@@ -70,6 +75,7 @@ h2 {
   margin-right: 2px;
   border-right: 1px solid #ccc;
 }
+
 .tool-box li:last-child {
   border-right: none;
 }
@@ -251,4 +257,93 @@ h2 {
   color: white;
   padding: 10px;
   font-size: 1.7rem;
+}
+/* Admin dashboard */
+.dashboard .row .col-9 {
+  background: #eee;
+  padding: 0;
+  border-radius: 10px;
+}
+.user-bar {
+  width: 80%;
+  margin: auto;
+}
+.user-bar a {
+  font-size: 1.6rem;
+  padding: 5px 10px;
+}
+.dashboard-menu .list-group button {
+  font-size: 1.8rem;
+  padding: 20px 20px;
+  background: green;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.menu-active {
+  background: rgb(7, 190, 7) !important;
+}
+.dashboard-menu li {
+  border: 1px solid white;
+}
+.dashboard-username {
+  text-align: left;
+  font-size: 2rem;
+}
+
+/* Dashboard */
+
+.dashboard-overview {
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+}
+.dashboard-overview div {
+  width: 25%;
+  height: 100px;
+  background: rgb(7, 187, 7);
+  margin: 10px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.dashboard-table {
+  padding: 10px !important;
+}
+.dashboard-orders th {
+  font-size: 1.6rem;
+}
+.dashboard-orders td {
+  font-size: 1.5rem;
+}
+.tools {
+  text-align: center;
+  font-size: 1.8rem !important;
+}
+
+.edit {
+  color: green;
+}
+.delete {
+  color: red;
+}
+.dashboard-profile-edit {
+  padding: 10px;
+}
+.dashboard-profile-edit .form-group {
+  margin: 20px;
+  width: 50%;
+}
+.dashboard-profile-edit .form-group label {
+  font-size: 1.6rem;
+  padding-bottom: 5px;
+}
+.dashboard-profile-edit .form-group input,
+.dashboard-profile-edit .form-group button {
+  font-size: 1.6rem;
 }

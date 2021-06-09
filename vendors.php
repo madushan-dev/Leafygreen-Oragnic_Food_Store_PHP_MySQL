@@ -1,6 +1,10 @@
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
 <!---------------------->
+<section class="bottom-header">
+    <h1 class="page-heading">All Vendors</h1>
+</section>
+
 <section class="mt-5">
     <div class="row">
         <div class="vendors-grid d-flex justify-content-center">

@@ -1,7 +1,11 @@
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
 <!---------------------->
-<section class="mt-5">
+<section class="bottom-header">
+    <h1 class="page-heading">All Products</h1>
+</section>
+
+<section class="mt-5 ">
     <div class="row">
         <div class="col-3 main-categories">
 
