@@ -16,11 +16,11 @@
                 <button type="button" class="list-group-item list-group-item-action footer-title">
                     Menu
                 </button>
-                <button type="button" class="list-group-item list-group-item-action">Home</button>
-                <button type="button" class="list-group-item list-group-item-action">About us</button>
-                <button type="button" class="list-group-item list-group-item-action">Shop</button>
-                <button type="button" class="list-group-item list-group-item-action">Vendors</button>
-                <button type="button" class="list-group-item list-group-item-action">Contact us</button>
+                <a href="index.php"><button type="button" class="list-group-item list-group-item-action">Home</button></a>
+                <a href="about-us.php"> <button type="button" class="list-group-item list-group-item-action">About us</button></a>
+                <a href="shop.php"><button type="button" class="list-group-item list-group-item-action">Shop</button></a>
+                <a href="vendors.php"> <button type="button" class="list-group-item list-group-item-action">Vendors</button></a>
+                <a href="contact-us.php"><button type="button" class="list-group-item list-group-item-action">Contact us</button></a>
 
 
             </div>

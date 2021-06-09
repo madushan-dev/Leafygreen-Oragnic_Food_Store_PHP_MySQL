@@ -15,9 +15,9 @@
 
                 <div class="list-group">
 
-                    <button type="button" class="list-group-item list-group-item-action menu-active">Dashboard</button>
-                    <button type="button" class="list-group-item list-group-item-action">My Purchased</button>
-                    <button type="button" class="list-group-item list-group-item-action">Edit Profile</button>
+                    <a href="buyer.php"><button type="button" class="list-group-item list-group-item-action menu-active">Dashboard</button></a>
+                    <a href="buyer-purchased.php"><button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
+                    <a href="buyer-edit.php"><button type="button" class="list-group-item list-group-item-action">Edit Profile</button></a>
 
 
                 </div>

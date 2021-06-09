@@ -15,12 +15,11 @@
 
                 <div class="list-group">
 
-
-                    <button type="button" class="list-group-item list-group-item-action ">Dashboard</button>
-                    <button type="button" class="list-group-item list-group-item-action  ">Products</button>
-                    <button type="button" class="list-group-item list-group-item-action menu-active ">Orders</button>
-                    <button type="button" class="list-group-item list-group-item-action">My Purchased</button>
-                    <button type="button" class="list-group-item list-group-item-action">Edit Profile</button>
+                    <a href="admin.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
+                    <a href="seller-products.php"><button type="button" class="list-group-item list-group-item-action ">Products</button></a>
+                    <a href="seller-orders.php"> <button type="button" class="list-group-item list-group-item-action menu-active">Orders</button></a>
+                    <a href="seller-purchased.php"> <button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
+                    <a href="seller-edit.php"> <button type="button" class="list-group-item list-group-item-action">Edit Profile</button></a>
 
                 </div>
 

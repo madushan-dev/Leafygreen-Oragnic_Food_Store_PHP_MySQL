@@ -17,6 +17,9 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
 }
+a {
+  text-decoration: none !important;
+}
 .row {
   width: 80%;
   margin: auto;
@@ -393,6 +396,9 @@ h2 {
   font-size: 1.6rem;
 }
 /* About us */
+.about-row {
+  background-color: rgb(240, 238, 238);
+}
 .about-details h2 {
   color: green;
 }
@@ -438,4 +444,36 @@ h2 {
 }
 .team-details h3 {
   font-weight: bold;
+}
+/* Contact us */
+.contact-row {
+  background-color: rgb(240, 238, 238);
+}
+.contact-details h2 {
+  text-align: left !important;
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding: 10px 0px;
+}
+.contact-details h2 .fa {
+  padding-right: 10px;
+}
+textarea {
+  height: 150px !important;
+}
+
+.contact-form {
+  padding: 10px;
+}
+.contact-form .form-group {
+  margin: 10px;
+}
+.contact-form .form-group label {
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+}
+.contact-form .form-group input,
+.contact-form .form-group button,
+.contact-form .form-group select {
+  font-size: 1.6rem;
 }

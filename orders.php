@@ -15,13 +15,13 @@
 
                 <div class="list-group">
 
-                    <button type="button" class="list-group-item list-group-item-action ">Dashboard</button>
-                    <button type="button" class="list-group-item list-group-item-action ">Products</button>
-                    <button type="button" class="list-group-item list-group-item-action menu-active ">Orders</button>
-                    <button type="button" class="list-group-item list-group-item-action">Users</button>
-                    <button type="button" class="list-group-item list-group-item-action">Stores</button>
-                    <button type="button" class="list-group-item list-group-item-action">Inquires</button>
-                    <button type="button" class="list-group-item list-group-item-action">Edit Profile</button>
+                    <a href="admin.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
+                    <a href="products.php"><button type="button" class="list-group-item list-group-item-action ">Products</button></a>
+                    <a href="orders.php"><button type="button" class="list-group-item list-group-item-action menu-active">Orders</button></a>
+                    <a href="users.php"><button type="button" class="list-group-item list-group-item-action">Users</button></a>
+                    <a href="stores.php"><button type="button" class="list-group-item list-group-item-action">Stores</button></a>
+                    <a href="inquires.php"><button type="button" class="list-group-item list-group-item-action">Inquires</button></a>
+                    <a href="edit-profile.php"><button type="button" class="list-group-item list-group-item-action">Edit Profile</button></a>
 
 
                 </div>

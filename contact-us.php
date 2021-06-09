@@ -5,25 +5,42 @@
     <h1 class="page-heading">Contact Us</h1>
 </section>
 
-<section class="mt-5 ">
+<section class="mt-5 contact-row">
     <div class="row">
-        <div class="col-6 main-categories">
-            <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+        <div class="col-6 contact-details m-auto">
+            <h2><i class="fa fa-envelope"></i> info@leafygreen.com</h2>
+            <h2><i class="fa fa-phone-square"></i> 076 6666 777</h2>
+            <h2><i class="fa fa-map-marker"></i> Kamurupitiya, Matara</h2>
 
         </div>
-        <div class="col-6 about-details">
-            <h2>About Leafy Green </h2>
-            <p class="pt-3">Leafy Green will offer a Customer to Customer (C2C) and Business to Customer (B2C) e-commerce
-                platform for buying and selling organic, locally grown and chemical free Vegetables, Fruits, Spices, Dairy
-                Products, Beverages and Organic ready made meals. This platform will help local farmers and specially,
-                it will provide a path for healthy life for the society.</p>
-            <p>The creation of the platform is in response to the
-                growing demand in the community for a local natural food store.This e - commerce platform targets
-                local adults who have a family with dependents (Mostly with children or old adults).</p>
-            <p>Specifically, we are
-                targeting the persons who are willing to pay a considerable amount of price margin for healthier food
-                than other foods. So, the target market basically consists of middle and high class families which are
-                getting enough salaries to spend some extra money for healthier food.</p>
+        <div class="col-6 ">
+            <form class="form contact-form " autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name">
+
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" aria-describedby="name" placeholder="Enter Phone Number">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label><br>
+                    <textarea name="message" id="" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" name="submit" class="btn btn-success px-4" rows="20">Submit</button>
+                </div>
+            </form>
+
         </div>
 
 
@@ -31,7 +48,11 @@
 
 
 </section>
-
+<div class="section mt-5">
+    <div class="map row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.496996373256!2d80.53975221534778!3d6.063504830020449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae141585ad5987d%3A0x717cf948bd5444ff!2sFaculty%20of%20Technology%2C%20University%20of%20Ruhuna!5e0!3m2!1sen!2slk!4v1623254405019!5m2!1sen!2slk" height="300px style=" border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
 
 
 <!-- Including Footer -->
