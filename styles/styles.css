@@ -392,3 +392,50 @@ h2 {
 .login-register-form .form-group select {
   font-size: 1.6rem;
 }
+/* About us */
+.about-details h2 {
+  color: green;
+}
+.about-details p {
+  font-size: 1.5rem;
+  padding: 5px;
+}
+.vision-mission {
+  width: 80%;
+  margin: auto;
+}
+.vision-mission div {
+  background-color: #13b471;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+.vision-mission div p {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 10px;
+}
+.team {
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.team > div {
+  width: 30%;
+  margin: 10px;
+}
+
+.team-details {
+  background-color: rgb(96, 202, 96);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.team-details h3 {
+  font-weight: bold;
+}
