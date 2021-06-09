@@ -360,19 +360,35 @@ h2 {
   font-size: 1.8rem;
   padding-left: 30px;
   border: 1px solid #ccc;
-  padding:20px;
+  padding: 20px;
 }
 .product-description {
   font-size: 1.8rem !important;
   margin: auto;
   background-color: rgb(171, 233, 171);
-  padding:20px;
-
+  padding: 20px;
 }
 .product-description h2 {
   padding-bottom: 10px;
   font-size: 2rem !important;
   text-align: left;
+}
 .quantity-selector {
   font-size: 1.5rem;
+}
+/* Login page */
+.login-register-form {
+  padding: 10px;
+}
+.login-register-form .form-group {
+  margin: 10px;
+}
+.login-register-form .form-group label {
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+}
+.login-register-form .form-group input,
+.login-register-form .form-group button,
+.login-register-form .form-group select {
+  font-size: 1.6rem;
 }
