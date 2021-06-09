@@ -347,3 +347,32 @@ h2 {
 .dashboard-profile-edit .form-group button {
   font-size: 1.6rem;
 }
+
+/* Single Vendor Page */
+.vendor-details p {
+  font-size: 2.5rem !important;
+}
+.vendor-details .description {
+  font-size: 1.5rem !important;
+  padding-right: 30px;
+}
+.product-details {
+  font-size: 1.8rem;
+  padding-left: 30px;
+  border: 1px solid #ccc;
+  padding:20px;
+}
+.product-description {
+  font-size: 1.8rem !important;
+  margin: auto;
+  background-color: rgb(171, 233, 171);
+  padding:20px;
+
+}
+.product-description h2 {
+  padding-bottom: 10px;
+  font-size: 2rem !important;
+  text-align: left;
+.quantity-selector {
+  font-size: 1.5rem;
+}
