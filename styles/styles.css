@@ -477,3 +477,85 @@ textarea {
 .contact-form .form-group select {
   font-size: 1.6rem;
 }
+/* Cart */
+
+.cart-table,
+.cart-summary {
+  font-size: 1.6rem;
+}
+.cart-image {
+  width: 100px;
+  height: 100px;
+}
+.cart-table th {
+  font-weight: 200;
+  font-size: 2.3rem;
+}
+.cart-table td {
+  padding-top: 40px;
+}
+.cart-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.cart-summary {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px;
+}
+.cart-summary h2 {
+  font-size: 2rem;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 0;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+.cart-summary td,
+.cart-summary th {
+  padding: 15px;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+.cart-summary a {
+  font-size: 1.6rem;
+  padding: 10px 15px;
+  margin-top: 30px;
+}
+.total td,
+.total th {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Checkout */
+
+.checkout-form {
+  padding: 10px;
+}
+.checkout-form .form-group {
+  margin: 20px;
+}
+.checkout-form .form-group label {
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+}
+.checkout-form .form-group input,
+.checkout-form .form-group button,
+.checkout-form .form-group select {
+  font-size: 1.6rem;
+}
+
+.complete-order input[type="submit"] {
+  font-size: 1.6rem;
+  padding: 10px 15px;
+  margin-top: 30px;
+}
+.payment input[type="radio"] {
+  margin-right: 10px;
+}
+.payment label {
+  font-size: 1.6rem;
+}

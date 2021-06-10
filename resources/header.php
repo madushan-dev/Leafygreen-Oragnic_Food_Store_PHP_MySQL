@@ -58,8 +58,7 @@
             <div class="col col-4 tool-box m-auto">
                 <ul class="list-unstyled d-flex justify-content-center ">
                     <li class="px-"><a href="login.php"><i class="fa fa-user""></i>My Account</a></li>
-                    <li class=" px-2"><a href="#"><i class="fa fa-heart-o""></i>Wishlist</a></li>
-                    <li class=" px-2"><a href="#"><i class="fa fa-shopping-cart""></i>Cart</a></li>
+                    <li class=" px-2"><a href="cart.php"><i class="fa fa-shopping-cart""></i>Cart</a></li>
                 </ul>
 
 
