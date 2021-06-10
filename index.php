@@ -5,11 +5,18 @@
     <div class="container col">
         <form class="form d-flex justify-content-center flex-fill">
             <div class="mb-3 flex-1 col-2">
+
                 <select class="form-select form-control p-3 py-3" aria-label="Default select example">
                     <option selected>Select Category</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php
+                    $category_query = "SELECT * FROM category";
+                    $category_result = mysqli_query($conn, $category_query);;
+                    while ($row = mysqli_fetch_assoc($category_result)) {
+                    ?>
+
+                        <option value="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></option>
+
+                    <?php } ?>
                 </select>
 
             </div>
@@ -35,13 +42,14 @@
                     <button type="button" class="list-group-item list-group-item-action bg-success title">
                         All Categories
                     </button>
-                    <button type="button" class="list-group-item list-group-item-action">Organic Spices</button>
-                    <button type="button" class="list-group-item list-group-item-action">Organic Vegitables</button>
-                    <button type="button" class="list-group-item list-group-item-action">Organic Fruits</button>
-                    <button type="button" class="list-group-item list-group-item-action">Dairy Products</button>
-                    <button type="button" class="list-group-item list-group-item-action">Beverages</button>
-                    <button type="button" class="list-group-item list-group-item-action">Ready Made Meals</button>
+                    <?php
+                    $category_result = mysqli_query($conn, $category_query);;
+                    while ($row = mysqli_fetch_assoc($category_result)) {
+                    ?>
 
+                        <button type="button" class="list-group-item list-group-item-action" name="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></button>
+
+                    <?php } ?>
 
                 </div>
 
