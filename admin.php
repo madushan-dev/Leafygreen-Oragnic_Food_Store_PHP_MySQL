@@ -1,3 +1,5 @@
+<!-- Starting sessions -->
+<?php session_start(); ?>
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
 <!---------------------->
