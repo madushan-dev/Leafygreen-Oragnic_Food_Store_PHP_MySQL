@@ -21,8 +21,11 @@
                     <input type="password" class="form-control" id="password" placeholder="Enter Password">
                 </div>
                 <div class="form-group">
-                    <button type="submit" name="login" class="btn btn-success px-4">Login</button>
+                    <!-- Changed attribute type for prevent refresh, added onclick function and a spinner for wait until server response -->
+                    <button type="button" name="login" class="btn btn-success px-4" onclick="ajaxCall()">Login <span id="save-btn-spinner" class="spinner-border-sm"></span></button>
                 </div>
+                <div id="loginStatusArea"></div>
+                
             </form>
 
 
@@ -88,6 +91,42 @@
             $("#store").remove();
         }
 
+    }
+
+    //Ajax script for submit login details, display errors and success redirects
+    function ajaxCall() {
+        var val1 = $('#email').val();
+        var val2 = $('#password').val();
+        $("#save-btn-spinner").addClass("spinner-border");
+        $.ajax({
+            type: 'POST',
+            url: './login_process.php',
+            data: { email: val1, password: val2 },
+            success: function(response) {
+                $("#save-btn-spinner").removeClass("spinner-border");
+                if ($.trim(response) == "username") {
+                    $('#loginStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Username is incorrect!</div>");
+                }
+                else if ($.trim(response) == "password") {
+                    $('#loginStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Password is incorrect!</div>");
+                }
+                else if ($.trim(response) == "admin" || $.trim(response) == "seller" || $.trim(response) == "customer") {
+                    $('#loginStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Login successful!</div>");
+                    if ($.trim(response) == "admin") {
+                        window.location.href = "./admin.php";
+                    }
+                    else if ($.trim(response) == "seller") {
+                        window.location.href = "./seller.php";
+                    }
+                    else if ($.trim(response) == "buyer") {
+                        window.location.href = "./buyer.php";
+                    }
+                }
+                else {
+                    $('#loginStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Invalid server respose!</div>");
+                }
+            }
+        });
     }
 </script>
 
