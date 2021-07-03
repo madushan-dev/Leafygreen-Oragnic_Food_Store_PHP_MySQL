@@ -54,7 +54,7 @@ include_once 'resources/db.php';
     $profit = 0;
 
     if(mysqli_num_rows($result)>1){
-        while($row = mysql_fetch_array($result)) {
+        while($row = mysqli_fetch_array($result)) {
             $revenue += $row['total_payment'];
         }
 
