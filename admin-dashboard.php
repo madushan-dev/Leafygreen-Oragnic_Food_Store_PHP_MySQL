@@ -10,7 +10,7 @@ include_once 'resources/db.php';
 #PHP for send data to the DB
     
     #user count
-    $sql = "SELECT * FROM users";
+    $sql = "SELECT * FROM users where type != 'admin'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -56,6 +56,7 @@ include_once 'resources/db.php';
         while($row = mysql_fetch_array($result)) {
             $revenue += $row['total_payment'];
         }
+
         #profit
         $profit = $revenue * 20 / 100 ;
     }
