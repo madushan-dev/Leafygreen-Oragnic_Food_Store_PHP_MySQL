@@ -45,14 +45,15 @@ include_once 'resources/db.php';
     $inc= mysqli_num_rows($result);
 
     #revenue
-    $revenue = 0;
-    $profit = 0;
-    $sql = "SELECT total_payment FROM orders";
+    $sql = "SELECT * FROM orders";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
     
-    if(mysqli_num_rows($result)>0){
+    $revenue = 0;
+    $profit = 0;
+
+    if(mysqli_num_rows($result)>1){
         while($row = mysql_fetch_array($result)) {
             $revenue += $row['total_payment'];
         }
@@ -61,6 +62,6 @@ include_once 'resources/db.php';
         $profit = $revenue * 20 / 100 ;
     }
 
-    echo $users,$store,$order,$product,$inc,$revenue,$profit;
+    echo $users.",".$store.",".$order.",".$product.",".$inc.",".$revenue.",".$profit;
 ?> 
 

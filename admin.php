@@ -36,15 +36,17 @@
         <script>
             window.addEventListener("load", function() {
                 $.ajax({
+                    type: "GET", 
                     url: './admin-dashboard.php',
                     success: function(response) {
-                        $('#user').html(response[0]);
-                        $('#store').html(response[1]);
-                        $('#order').html(response[2]);
-                        $('#product').html(response[3]);
-                        $('#inc').html(response[4]);
-                        $('#rev').html("Rs. "+response[5]);
-                        $('#profit').html("Rs. "+response[6]);
+                        var data = response.split(",");
+                        $('#user').html(data[0]);
+                        $('#store').html(data[1]);
+                        $('#order').html(data[2]);
+                        $('#product').html(data[3]);
+                        $('#inc').html(data[4]);
+                        $('#revenue').html("Rs. "+data[5]);
+                        $('#profit').html("Rs. "+data[6]);
                     }
                 });
             });
@@ -52,7 +54,7 @@
         <div class="col-9 dashboard-overview d-flex justify-content-center align-items-center pt-5">
             <div style="background-color: #3498db;">
                 <h2>Revenue</h2>
-                <h3 id="rev"></h3>
+                <h3 id="revenue"></h3>
 
             </div>
             <div style="background-color: #e67e22;">
