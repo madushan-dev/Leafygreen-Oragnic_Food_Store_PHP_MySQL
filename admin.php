@@ -31,6 +31,20 @@
 
 
         </div>
+        <script>
+            window.addEventListener("load", function() {
+                $.ajax({
+                    url: './dashboard.php',
+                    success: function(response) {
+                        $('#user').html(response[0]);
+                        $('#store').html(response[1]);
+                        $('#order').html(response[2]);
+                        $('#product').html(response[3]);
+                        $('#inc').html(response[4]);
+                    }
+                });
+            });
+        </script>
         <div class="col-9 dashboard-overview d-flex justify-content-center align-items-center pt-5">
             <div style="background-color: #3498db;">
                 <h2>Revenue</h2>
@@ -43,24 +57,24 @@
             </div>
             <div style="background-color: #2c3e50;">
                 <h2>Products</h2>
-                <h3>10</h3>
+                <h3 id="product"></h3>
             </div>
             <div style="background-color: #8e44ad;">
                 <h2>Orders</h2>
-                <h3>15</h3>
+                <h3 id="order"></h3>
             </div>
             <div style="background-color: #f1c40f;">
                 <h2>Stores</h2>
-                <h3>10</h3>
+                <h3 id="store"></h3>
             </div>
             <div style="background-color: #c0392b;">
                 <h2>Users</h2>
-                <h3>10</h3>
+                <h3 id="user"></h3>
             </div>
 
             <div style="background-color: #1abc9c;">
                 <h2>Inquires</h2>
-                <h3>10</h3>
+                <h3 id="inc"></h3>
             </div>
 
 
