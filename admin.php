@@ -36,13 +36,15 @@
         <script>
             window.addEventListener("load", function() {
                 $.ajax({
-                    url: './dashboard.php',
+                    url: './admin-dashboard.php',
                     success: function(response) {
                         $('#user').html(response[0]);
                         $('#store').html(response[1]);
                         $('#order').html(response[2]);
                         $('#product').html(response[3]);
                         $('#inc').html(response[4]);
+                        $('#rev').html("Rs. "+response[5]);
+                        $('#profit').html("Rs. "+response[6]);
                     }
                 });
             });
@@ -50,12 +52,12 @@
         <div class="col-9 dashboard-overview d-flex justify-content-center align-items-center pt-5">
             <div style="background-color: #3498db;">
                 <h2>Revenue</h2>
-                <h3>R.s 30,000</h3>
+                <h3 id="rev"></h3>
 
             </div>
             <div style="background-color: #e67e22;">
                 <h2>Profit</h2>
-                <h3>R.s 20,000</h3>
+                <h3 id="profit"></h3>
             </div>
             <div style="background-color: #2c3e50;">
                 <h2>Products</h2>
