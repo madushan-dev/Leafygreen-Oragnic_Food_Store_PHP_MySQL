@@ -1,7 +1,11 @@
 <!-- Starting sessions -->
 <?php session_start(); ?>
 <!-- Including Header -->
-<?php include_once 'resources/header.php'; ?>
+<?php include_once 'resources/header.php'; ?> 
+
+
+
+
 <!---------------------->
 <section class="bottom-header ">
     <div class="user-bar d-flex justify-content-between align-items-center">
