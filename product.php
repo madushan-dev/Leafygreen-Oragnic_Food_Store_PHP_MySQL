@@ -5,7 +5,7 @@
 $category_query = "SELECT * FROM category";
 
 $pid=$_GET['pid'];
-$product_query = "SELECT products.p_name,products.price,products.quantity,products.description,store.s_name as vendor,category.c_name as category FROM products,category,store WHERE p_id='$pid' AND products.p_s_id=store.s_id AND p_c_id=category.c_id";
+$product_query = "SELECT products.image,products.p_name,products.price,products.quantity,products.description,store.s_name as vendor,category.c_name as category FROM products,category,store WHERE p_id='$pid' AND products.p_s_id=store.s_id AND p_c_id=category.c_id";
 
 $product_result = mysqli_query($conn, $product_query);;
 $row = mysqli_fetch_assoc($product_result);
@@ -25,7 +25,7 @@ $description=$row['description'];
 <section class="mt-5 ">
     <div class="row ">
         <div class="col-5">
-            <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+        <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
 
         </div>
         <div class="col-7 product-details d-flex flex-column justify-content-center align-items-start">

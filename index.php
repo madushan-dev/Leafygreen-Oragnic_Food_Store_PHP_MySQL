@@ -87,43 +87,6 @@
         </div>
     </div>
 </section>
-
-<!--------- organic Spices products--------->
-<section class="spices space">
-    <div class="row">
-        <h2 class="category-title">Latest Organic Spices </h2>
-
-        <div class="product-row">
-        <?php
-                    $spice_query ="SELECT * FROM products WHERE p_c_id='1' LIMIT 4";
-                    $spice_result = mysqli_query($conn, $spice_query);
-                    while ($row = mysqli_fetch_assoc($spice_result)) {
-                    ?>
-
-            <div>
-                <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-               <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
-                <p class="row-description"><?php echo $row['description'] ?></p>
-                <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-
-
-                    <?php } ?>
-         
-
-
-        </div>
-
-    </div>
-
-
-
-</section>
-
 <!--------- organic foods products--------->
 
 <section class="foods space ">
@@ -138,7 +101,7 @@
                     ?>
 
             <div>
-                <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+            <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
                     <h4 class="row-category">Spices</h4>
                 </small>
@@ -162,6 +125,43 @@
 
 
 </section>
+<!--------- organic Spices products--------->
+<section class="spices space">
+    <div class="row">
+        <h2 class="category-title">Latest Organic Spices </h2>
+
+        <div class="product-row">
+        <?php
+                    $spice_query ="SELECT * FROM products WHERE p_c_id='1' LIMIT 4";
+                    $spice_result = mysqli_query($conn, $spice_query);
+                    while ($row = mysqli_fetch_assoc($spice_result)) {
+                    ?>
+
+            <div>
+                <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
+                <small>
+                    <h4 class="row-category">Spices</h4>
+                </small>
+               <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
+                <p class="row-description"><?php echo $row['description'] ?></p>
+                <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
+                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+            </div>
+
+
+                    <?php } ?>
+         
+
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
 <!--------- organic Fruits products--------->
 
 <section class="foods space">
@@ -176,7 +176,7 @@
                     ?>
 
             <div>
-                <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+            <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
                     <h4 class="row-category">Spices</h4>
                 </small>

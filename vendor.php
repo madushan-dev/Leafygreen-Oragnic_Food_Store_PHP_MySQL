@@ -49,7 +49,7 @@
                     ?>
 
                     <div>
-                        <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+                    <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                         <small>
                             <h4 class="row-category">Spices</h4>
                         </small>
