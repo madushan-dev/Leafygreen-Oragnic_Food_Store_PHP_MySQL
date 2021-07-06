@@ -9,7 +9,7 @@ include_once 'resources/db.php';
 
 #PHP for send data to the DB
     
-    $sql = "SELECT * FROM products,users,category where c_id=p_c_id and p_s_id = u_id";
+    $sql = "SELECT * FROM store,users where s_u_id=u_id";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -18,14 +18,12 @@ include_once 'resources/db.php';
     while($row = mysqli_fetch_array($result)) {
         echo "<tr>
             <th scope='row'>".$num++."</th>
-            <td>".$row["p_name"]."</td>
-            <td>".$row["c_name"]."</td>
-            <td>".$row["description"]."</td>
-            <td>".$row["price"]."</td>
-            <td>@mdo</td>
+            <td>".$row["s_name"]."</td>
+            <td>".$row["s_description"]."</td>
+            <td>".$row["s_phone_number"]."</td>
             <td>".$row["name"]."</td>
             <td class='tools'>
-            <button id='p".$row["p_id"]."' type='button' class='btn btn-primary bg-warning' data-toggle='modal' data-target='#exampleModalCenter'>
+            <button id='p".$row["s_id"]."' type='button' class='btn btn-primary bg-warning' data-toggle='modal' data-target='#exampleModalCenter'>
             <i class='fa fa-pencil-square-o edit px-2 text-dark'></i>
             </button>
 
@@ -49,7 +47,7 @@ include_once 'resources/db.php';
             </div>
             </div>
             
-            <button id='p".$row["p_id"]."' type='button' class='btn btn-primary bg-danger' data-toggle='modal' data-target='#exampleModalCenter'>
+            <button id='p".$row["s_id"]."' type='button' class='btn btn-primary bg-danger' data-toggle='modal' data-target='#exampleModalCenter'>
             <i class='fa fa-window-close-o delete px-2 text-light'></i></td>
             </button>
 
@@ -64,7 +62,7 @@ include_once 'resources/db.php';
                 </div>
                 <div class='modal-body'>
                     Are you sure you want to delete this product?<br>
-                    product name : ".$row["p_name"]."
+                    product name : ".$row["name"]."
                 </div>
                 <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
