@@ -6,8 +6,8 @@
         <form class="form d-flex justify-content-center flex-fill">
             <div class="mb-3 flex-1 col-2">
 
-                <select class="form-select form-control p-3 py-3" aria-label="Default select example">
-                    <option selected>Select Category</option>
+                <select class="form-select form-control p-3 py-3" id="cat">
+                    <option selected value="all">Select Category</option>
                     <?php
                     $category_query = "SELECT * FROM category";
                     $category_result = mysqli_query($conn, $category_query);;
@@ -22,7 +22,8 @@
             </div>
             <div class="mb-3 col-6">
 
-                <input type="text" class="form-control p-3 py-3 pl-5" id="exampleInputPassword1" placeholder="Enter item name">
+                <input type="text" name="search_text" id="search_text" class="form-control p-3 py-3 pl-5" placeholder="Enter item name">
+                <div id="result"></div>
             </div>
 
             <div class="mb-3">
@@ -204,11 +205,46 @@
 
 
 
-
-
-
-
-
 <!-- Including Footer -->
 <?php include_once 'resources/footer.php'; ?>
 <!---------------------->
+
+<script>
+ 
+$(document).ready(function(){
+    var cat= "all";
+    $('#cat').change(function(){
+        cat = $(this).val();
+    });
+
+
+    $('#search_text').keyup(function(){
+        
+        var txt = $(this).val();
+         if(txt != '')
+         {
+            $("#result").show();
+            $('#result').html('');
+            $.ajax({
+                url:"livesearch.php",
+                method:"post",
+                data:{search:txt,category:cat},
+                dataType:"text",
+                success:function(data)
+                {
+                    $('#result').html(data);
+                }
+            });
+     
+         }
+         else{
+            $("#result").hide();
+        }
+     
+    });
+});
+
+
+
+
+</script>
