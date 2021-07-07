@@ -104,6 +104,7 @@ include_once 'resources/db.php';
             });
             </script>
             </div>
+        </tr>
     
         ";
     }
