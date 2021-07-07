@@ -15,7 +15,7 @@
 
                 <div class="list-group">
 
-                    <a href="admin.php"><button type="button" class="list-group-item list-group-item-action menu-active">Dashboard</button></a>
+                    <a href="seller.php"><button type="button" class="list-group-item list-group-item-action menu-active">Dashboard</button></a>
                     <a href="seller-products.php"><button type="button" class="list-group-item list-group-item-action ">Products</button></a>
                     <a href="seller-orders.php"> <button type="button" class="list-group-item list-group-item-action ">Orders</button></a>
                     <a href="seller-purchased.php"> <button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
@@ -37,6 +37,7 @@
                         $('#order').html(data[0]);
                         $('#product').html(data[1]);
                         $('#revenue').html("Rs. "+data[2]);
+                        $('#perch').html(+data[3]);
                     }
                 });
             });
@@ -62,7 +63,7 @@
             </div>
             <div style="background-color: #f1c40f;">
                 <h2>Purchased</h2>
-                <h3>10</h3>
+                <h3 id="perch"></h3>
             </div>
 
 

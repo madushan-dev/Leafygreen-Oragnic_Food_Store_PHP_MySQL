@@ -36,7 +36,12 @@ include_once 'resources/db.php';
             $revenue += $row['total_payment'];
         }
     }
+    $sql = "SELECT * FROM orders WHERE o_u_id = '".$_SESSION["userID"]."'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $perch= mysqli_num_rows($result);
 
-    echo $order.",".$product.",".$revenue;
+    echo $order.",".$product.",".$revenue.",".$perch;
 ?> 
 
