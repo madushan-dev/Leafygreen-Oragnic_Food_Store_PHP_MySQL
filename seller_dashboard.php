@@ -8,48 +8,40 @@ session_start();
 include_once 'resources/db.php';
 
 #PHP for send data to the DB
-    
-  
-    $sql = "SELECT * FROM users where type != 'admin'";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $users= mysqli_num_rows($result);
 
- 
-    $sql = "SELECT * FROM store";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $store= mysqli_num_rows($result);
-    
-    
-    $sql = "SELECT * FROM orders";
+    $order = 0;
+    $product = 0;
+    $revenue = 0;
+
+    #order count
+    $sql = "SELECT * FROM orders WHERE o_u_id = '".$_SESSION["userID"]."'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
     $order= mysqli_num_rows($result);
 
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM products WHERE p_s_id = '".$_SESSION["userID"]."'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
     $product= mysqli_num_rows($result);
 
-
-    $sql = "SELECT * FROM inquiry";
+    $sql = "SELECT * FROM orders WHERE o_u_id = '".$_SESSION["userID"]."'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
-    $inc= mysqli_num_rows($result);
 
-    
-    $sql = "SELECT * FROM orders";
+    if(mysqli_num_rows($result)>1){
+        while($row = mysqli_fetch_array($result)) {
+            $revenue += $row['total_payment'];
+        }
+    }
+    $sql = "SELECT * FROM orders WHERE o_u_id = '".$_SESSION["userID"]."'";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
-    
-    
-    echo $users.",".$store.",".$order.",".$product.",".$inc.",".$revenue.",".$profit;
+    $perch= mysqli_num_rows($result);
+
+    echo $order.",".$product.",".$revenue.",".$perch;
 ?> 
 
