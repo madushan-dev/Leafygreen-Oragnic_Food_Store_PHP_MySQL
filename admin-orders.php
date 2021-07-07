@@ -62,8 +62,7 @@ include_once 'resources/db.php';
                     </button>
                 </div>
                 <div class='modal-body'>
-                    Are you sure you want to delete this product?<br>
-                    product name : ".$row["p_name"]."
+                    
                 </div>
                 <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
