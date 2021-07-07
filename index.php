@@ -95,7 +95,7 @@
 
         <div class="product-row">
         <?php
-                    $vegitable_query ="SELECT * FROM products WHERE p_c_id='2' LIMIT 4";
+                    $vegitable_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='2' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
                     $vegitalble_result = mysqli_query($conn, $vegitable_query);
                     while ($row = mysqli_fetch_assoc($vegitalble_result)) {
                     ?>
@@ -103,7 +103,7 @@
             <div>
             <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store'] ?></h4>
                 </small>
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
@@ -132,7 +132,7 @@
 
         <div class="product-row">
         <?php
-                    $spice_query ="SELECT * FROM products WHERE p_c_id='1' LIMIT 4";
+                    $spice_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='1' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
                     $spice_result = mysqli_query($conn, $spice_query);
                     while ($row = mysqli_fetch_assoc($spice_result)) {
                     ?>
@@ -140,7 +140,7 @@
             <div>
                 <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store']?></h4>
                 </small>
                <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
@@ -170,7 +170,7 @@
 
         <<div class="product-row">
         <?php
-                    $fruit_query ="SELECT * FROM products WHERE p_c_id='3' LIMIT 4";
+                    $fruit_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='3' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
                     $fruit_result = mysqli_query($conn, $fruit_query);
                     while ($row = mysqli_fetch_assoc($fruit_result)) {
                     ?>
@@ -178,7 +178,7 @@
             <div>
             <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store'];?></h4>
                 </small>
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>

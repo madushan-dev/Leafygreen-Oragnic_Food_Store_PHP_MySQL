@@ -7,8 +7,8 @@
                     $category_result = mysqli_query($conn, $category_query);;
 
                     $category=$_GET['cat'];
-                    $fruit_query ="SELECT * FROM products WHERE p_c_id='$category' ORDER BY p_id DESC LIMIT 9";
-                    $total= mysqli_num_rows($fruit_result = mysqli_query($conn, $fruit_query));
+                    $product_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 9";
+                    $total= mysqli_num_rows($product_result = mysqli_query($conn, $product_query));
          
         ?>
 <h2><?php echo $total?> Products Available </h2>
@@ -42,13 +42,13 @@
             <div class="product-row shop-products">
             <?php
            
-                    while ($row = mysqli_fetch_assoc($fruit_result)) {
+                    while ($row = mysqli_fetch_assoc($product_result)) {
                     ?>
 
             <div>
             <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store'];?></h4>
                 </small>
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>

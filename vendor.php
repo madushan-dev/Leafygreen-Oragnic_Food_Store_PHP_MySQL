@@ -36,7 +36,7 @@
         <h2 class="category-title" style="font-size:2rem">Vendor Products </h2>
 
             <?php
-                $product_query = "SELECT * FROM products where p_s_id=$sid";
+                $product_query = "SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE s_id='$sid' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 8";
 
                 $product_result = mysqli_query($conn, $product_query);
 
@@ -51,7 +51,7 @@
                     <div>
                     <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                         <small>
-                            <h4 class="row-category">Spices</h4>
+                            <h4 class="row-category"><?php echo $row['store'];?></h4>
                         </small>
                     <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                         <p class="row-description"><?php echo $row['description'] ?></p>
