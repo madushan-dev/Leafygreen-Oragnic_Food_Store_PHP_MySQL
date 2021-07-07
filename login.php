@@ -144,15 +144,15 @@
                         else if ($.trim(response) == "password") {
                             $('#loginStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Password is incorrect!</div>");
                         }
-                        else if ($.trim(response) == "admin" || $.trim(response) == "seller" || $.trim(response) == "customer") {
+                        else if ($.trim(response) == "admin" || $.trim(response) == "Seller" || $.trim(response) == "Customer") {
                             $('#loginStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Login successful!</div>");
                             if ($.trim(response) == "admin") {
                                 window.location.href = "./admin.php";
                             }
-                            else if ($.trim(response) == "seller") {
+                            else if ($.trim(response) == "Seller") {
                                 window.location.href = "./seller.php";
                             }
-                            else if ($.trim(response) == "buyer") {
+                            else if ($.trim(response) == "Customer") {
                                 window.location.href = "./buyer.php";
                             }
                         }
@@ -239,10 +239,6 @@
                                                 else if ($.trim(response) == "regerror") {
                                                     $('#regStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Registration error!</div>");
                                                 }
-                                                else if ($.trim(response) == "regsuccess") {
-                                                    $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful!</div>");
-                                                    window.location.href = "./buyer.php";
-                                                }
                                                 else if ($.trim(response) == "storesuccessregsuccess") {
                                                     $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful, New store created!</div>");
                                                     window.location.href = "./seller.php";
@@ -277,10 +273,6 @@
                                     else if ($.trim(response) == "regsuccess") {
                                         $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful!</div>");
                                         window.location.href = "./buyer.php";
-                                    }
-                                    else if ($.trim(response) == "storesuccessregsuccess") {
-                                        $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful, New store created!</div>");
-                                        window.location.href = "./seller.php";
                                     }
                                     else {
                                         $('#regStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Unknown server response</div>");
