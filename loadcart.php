@@ -1,7 +1,11 @@
 <?php
 include_once 'resources/db.php';
+session_start();
 
-$user="2";
+
+if(isset($_SESSION['userID'])){
+    $user=$_SESSION['userID'];
+
 
 if(isset($_POST['prdid'])){
     $ptd_id=$_POST['prdid'];
@@ -11,7 +15,7 @@ if(isset($_POST['prdid'])){
 
 if(isset($user)){
 
-    $cart_query ="SELECT cart.status,cart.cart_id,SUM(cart.quantity) as quantity ,cart.cart_p_id,products.p_name,products.price,products.image FROM cart,products WHERE cart_u_id=$user AND cart.cart_p_id=products.p_id AND cart.status=1 GROUP BY cart.cart_p_id";
+    $cart_query ="SELECT cart.status,cart.cart_id,cart.quantity,cart.cart_p_id,products.p_name,products.price,products.image FROM cart,products WHERE cart_u_id=$user AND cart.cart_p_id=products.p_id AND cart.status=1 GROUP BY cart.cart_p_id";
     $cart_result = mysqli_query($conn, $cart_query);
 }
 
@@ -109,5 +113,8 @@ if(mysqli_num_rows($cart_result)>0)
 else{
     echo '<p class="unavailable">No any products available in cart!</p>';
 }
-
+}
+else{
+    echo '<p class="unavailable">Please Log into to the website!</p>';
+ }
 ?>

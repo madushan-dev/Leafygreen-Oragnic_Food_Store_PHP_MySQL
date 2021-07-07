@@ -1,5 +1,7 @@
 <!-- Including Header -->
-<?php include_once 'resources/header.php'; ?>
+<?php include_once 'resources/header.php'; 
+session_start();
+?>
 <!---------------------->
 <section class="bottom-header">
     <h1 class="page-heading">All Products</h1>

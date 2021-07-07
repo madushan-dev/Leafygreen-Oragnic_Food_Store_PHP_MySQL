@@ -1,5 +1,7 @@
 <!-- Including Header -->
-<?php include_once 'resources/header.php'; ?>
+<?php include_once 'resources/header.php'; 
+session_start();
+?>
 
 <?php
 $category_query = "SELECT * FROM category";
