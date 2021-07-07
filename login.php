@@ -85,17 +85,18 @@
     function getval(sel) {
 
         if ((sel.value) == "Seller") {
+            //IDs are fixed
             $("#storename").append(`<div id="store"> <div id="" class="form-group">
-                    <label for="storename">Store Name</label>
-                    <input type="text" class="form-control" id="storename" placeholder="Enter Store Name">
+                    <label for="storenameinput">Store Name</label>
+                    <input type="text" class="form-control" id="storenameinput" placeholder="Enter Store Name">
                 </div><div id="" class="form-group">
-                    <label for="storename">Phone Number</label>
+                    <label for="storephone">Phone Number</label>
                     <input type="text" class="form-control" id="storephone" placeholder="Enter Phone Number">
                 </div><div id="" class="form-group">
-                    <label for="storename">Store Description</label>
-                    <textarea class="form-control"> </textarea>
+                    <label for="storedes">Store Description</label>
+                    <textarea class="form-control" id="storedes"> </textarea>
                 </div></div><div id="" class="form-group mb-5">
-                    <label for="storename">Store Image</label>
+                    <label for="storeimage">Store Image</label>
                     <input type="file" class="form-control" id="storeimage">
                 </div>`);
         }
@@ -149,11 +150,18 @@
         var val3 = $('#phone').val();
         var val4 = $('#regpassword').val();
         var val5 = $('#usertype').val();
+
+        //Varibales for store table
+        var val6 = $('#storenameinput').val();
+        var val7 = $('#storephone').val();
+        var val8 = $('#storedes').val();
+        var val9 = $('#storeimage').val();
+
         $("#register-btn-spinner").addClass("spinner-border");
         $.ajax({
             type: 'POST',
             url: './register_process.php',
-            data: { name: val1, regemail: val2, phone: val3, regpassword: val4, usertype: val5 },
+            data: { name: val1, regemail: val2, phone: val3, regpassword: val4, usertype: val5, storename: val6, storephone: val7, storedes: val8, storeimage: val9 },
             success: function(response) {
                 $("#register-btn-spinner").removeClass("spinner-border");
                 if ($.trim(response) == "email") {
@@ -167,12 +175,11 @@
                 }
                 else if ($.trim(response) == "regsuccess") {
                     $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful!</div>");
-                    if (val5 == "Customer") {
-                        window.location.href = "./buyer.php";
-                    }
-                    else if (val5 == "Seller") {
-                        window.location.href = "./seller.php";
-                    }
+                    window.location.href = "./buyer.php";
+                }
+                else if ($.trim(response) == "storesuccessregsuccess") {
+                    $('#regStatusArea').html("<div class='alert alert-success'><strong>Success: </strong> Registration successful, New store created!</div>");
+                    window.location.href = "./seller.php";
                 }
                 else {
                     $('#regStatusArea').html("<div class='alert alert-danger'><strong>Error:</strong> Unknown server response</div>");
