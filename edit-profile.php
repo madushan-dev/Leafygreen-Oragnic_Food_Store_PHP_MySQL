@@ -40,8 +40,8 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
 
                 </div>
                 <div class="form-group">
@@ -51,13 +51,35 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="UpdateDetails()" >Submit</button>
+                    
+                </div>
+                <div class="form-group">
+                    <h4 id="result"></h4>
+
                 </div>
             </form>
+            <script>
+            function UpdateDetails() {
+                var val1 = $('#name').val();
+                var val2 = $('#email').val();
+                var val3 = $('#phone').val();
+                var val4 = $('#password').val();
+                $.ajax({
+                    type: 'POST',
+                    url: './admin-editprofile.php',
+                    data: { name: val1, email: val2, phone: val3, password: val4 },
+                    success: function(response) {
+                        $('#result').html(response);
+                    }
+                });
+            }
+
+            </script>
 
         </div>
 
