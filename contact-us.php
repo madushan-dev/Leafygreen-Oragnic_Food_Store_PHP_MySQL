@@ -14,26 +14,26 @@
 
         </div>
         <div class="col-6 ">
-            <form class="form contact-form " autocomplete="off">
+            <form class="form contact-form " autocomplete="off" action="handlers/insert-contactus.php" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name" name="name">
 
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
 
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="text" class="form-control" id="phone" aria-describedby="name" placeholder="Enter Phone Number">
+                    <input type="text" class="form-control" id="phone" aria-describedby="name" placeholder="Enter Phone Number" name="phone">
 
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label><br>
-                    <textarea name="message" id="" class="form-control"></textarea>
+                    <textarea name="message" id="" class="form-control" ></textarea>
                 </div>
 
                 <div class="form-group">

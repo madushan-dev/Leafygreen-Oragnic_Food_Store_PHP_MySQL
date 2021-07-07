@@ -85,9 +85,18 @@
     function getval(sel) {
 
         if ((sel.value) == "Seller") {
-            $("#storename").append(` <div id="store" class="form-group">
+            $("#storename").append(`<div id="store"> <div id="" class="form-group">
                     <label for="storename">Store Name</label>
-                    <input type="text" class="form-control" id="storenamefiled" placeholder="Enter Store Name">
+                    <input type="text" class="form-control" id="storename" placeholder="Enter Store Name">
+                </div><div id="" class="form-group">
+                    <label for="storename">Phone Number</label>
+                    <input type="text" class="form-control" id="storephone" placeholder="Enter Phone Number">
+                </div><div id="" class="form-group">
+                    <label for="storename">Store Description</label>
+                    <textarea class="form-control"> </textarea>
+                </div></div><div id="" class="form-group mb-5">
+                    <label for="storename">Store Image</label>
+                    <input type="file" class="form-control" id="storeimage">
                 </div>`);
         }
         if ((sel.value) == "Customer") {

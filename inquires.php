@@ -30,6 +30,17 @@
 
 
         </div>
+        <script>
+            window.addEventListener("load", function() {
+                $.ajax({
+                    type: "GET", 
+                    url: './admin-inquires.php',
+                    success: function(response) {
+                        $('#inc').html(response);
+                    }
+                });
+            });
+        </script>
         <div class="col-9 dashboard-orders dashboard-table">
 
             <table class="table table-hover order-table ">
@@ -39,59 +50,13 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone Number</th>
+                        <th scope="col">Title </th>
                         <th scope="col">Message </th>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-
-                    </tr>
+                <tbody id="inc">
+                    
                 </tbody>
             </table>
 

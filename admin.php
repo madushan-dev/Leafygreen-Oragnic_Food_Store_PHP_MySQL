@@ -33,36 +33,54 @@
 
 
         </div>
+        <script>
+            window.addEventListener("load", function() {
+                $.ajax({
+                    type: "GET", 
+                    url: './admin-dashboard.php',
+                    success: function(response) {
+                        var data = response.split(",");
+                        $('#user').html(data[0]);
+                        $('#store').html(data[1]);
+                        $('#order').html(data[2]);
+                        $('#product').html(data[3]);
+                        $('#inc').html(data[4]);
+                        $('#revenue').html("Rs. "+data[5]);
+                        $('#profit').html("Rs. "+data[6]);
+                    }
+                });
+            });
+        </script>
         <div class="col-9 dashboard-overview d-flex justify-content-center align-items-center pt-5">
             <div style="background-color: #3498db;">
                 <h2>Revenue</h2>
-                <h3>R.s 30,000</h3>
+                <h3 id="revenue"></h3>
 
             </div>
             <div style="background-color: #e67e22;">
                 <h2>Profit</h2>
-                <h3>R.s 20,000</h3>
+                <h3 id="profit"></h3>
             </div>
             <div style="background-color: #2c3e50;">
                 <h2>Products</h2>
-                <h3>10</h3>
+                <h3 id="product"></h3>
             </div>
             <div style="background-color: #8e44ad;">
                 <h2>Orders</h2>
-                <h3>15</h3>
+                <h3 id="order"></h3>
             </div>
             <div style="background-color: #f1c40f;">
                 <h2>Stores</h2>
-                <h3>10</h3>
+                <h3 id="store"></h3>
             </div>
             <div style="background-color: #c0392b;">
                 <h2>Users</h2>
-                <h3>10</h3>
+                <h3 id="user"></h3>
             </div>
 
             <div style="background-color: #1abc9c;">
                 <h2>Inquires</h2>
-                <h3>10</h3>
+                <h3 id="inc"></h3>
             </div>
 
 

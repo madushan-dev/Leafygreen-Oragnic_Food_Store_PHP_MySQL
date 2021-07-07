@@ -131,6 +131,10 @@ a {
   transition: 0.5s;
 }
 
+.row-title a {
+  color: rgb(32, 30, 30);
+}
+
 .product-row div:hover {
   transform: translate(0px, -10px);
 }
@@ -148,7 +152,6 @@ a {
   padding: 5px;
   border-radius: 10px;
   text-align: center;
-  width: 40%;
   color: white;
 }
 .row-title {
@@ -260,6 +263,9 @@ a {
   color: white;
   padding: 10px;
   font-size: 1.7rem;
+}
+.vendor-title a {
+  color: white;
 }
 /* Admin dashboard */
 .dashboard .row .col-9 {

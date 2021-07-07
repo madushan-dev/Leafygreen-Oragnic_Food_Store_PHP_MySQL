@@ -1,20 +1,37 @@
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
+
+<?php
+$category_query = "SELECT * FROM category";
+
+$pid=$_GET['pid'];
+$product_query = "SELECT products.image,products.p_name,products.price,products.quantity,products.description,store.s_name as vendor,category.c_name as category FROM products,category,store WHERE p_id='$pid' AND products.p_s_id=store.s_id AND p_c_id=category.c_id";
+
+$product_result = mysqli_query($conn, $product_query);;
+$row = mysqli_fetch_assoc($product_result);
+
+$name = $row['p_name'];
+$price=$row['price'];
+$category=$row['category'];
+$vendor=$row['vendor'];
+$quantity=$row['quantity'];
+$description=$row['description'];
+?>
 <!---------------------->
 <section class="bottom-header">
-    <h1 class="page-heading">Product Name</h1>
+    <h1 class="page-heading"><?php echo $name?></h1>
 </section>
 
 <section class="mt-5 ">
     <div class="row ">
         <div class="col-5">
-            <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+        <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
 
         </div>
         <div class="col-7 product-details d-flex flex-column justify-content-center align-items-start">
-            <p>Price: Rs. 12,00.00</p>
-            <p>Category: Spices</p>
-            <p>Vendor: New Store</p>
+            <p>Price: Rs. <?php echo $price?>.00</p>
+            <p>Category: <?php echo $category?></p>
+            <p>Vendor: <?php echo $vendor?></p>
             <form action="" class="form quantity-selector my-4">
                 <label for="quantity">Select Quantity</label>
                 <select name="quantity" id="quantity">
@@ -31,7 +48,7 @@
         </div>
         <div class="product-description mt-5">
             <h2>Description</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto rem veniam sit iure est repudiandae harum, modi maxime omnis animi magnam libero minima reiciendis maiores perferendis dignissimos, quis molestiae incidunt!</p>
+            <p><?php echo $description?></p>
         </div>
     </div>
 

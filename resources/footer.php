@@ -33,12 +33,17 @@
                 <button type="button" class="list-group-item list-group-item-action footer-title">
                     Categories
                 </button>
-                <button type="button" class="list-group-item list-group-item-action">Organic Spices </button>
-                <button type="button" class="list-group-item list-group-item-action">Organic Vegetables</button>
-                <button type="button" class="list-group-item list-group-item-action">Organic Fruits</button>
-                <button type="button" class="list-group-item list-group-item-action">Dairy Products </button>
-                <button type="button" class="list-group-item list-group-item-action">Beverages</button>
-                <button type="button" class="list-group-item list-group-item-action">Ready Made Meals</button>
+                <?php
+                    $category_query = "SELECT * FROM category";
+                    $category_result = mysqli_query($conn, $category_query);;
+                    while ($row = mysqli_fetch_assoc($category_result)) {
+                    ?>
+
+                        <a href="category.php?cat=<?php echo ($row['c_id']) ?>"><button type="button" class="list-group-item list-group-item-action" name="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></button></a>
+
+                    <?php } ?>
+
+          
 
             </div>
 

@@ -5,7 +5,7 @@
 <!---------------------->
 <section class="bottom-header ">
     <div class="user-bar d-flex justify-content-between align-items-center">
-        <h2 class="dashboard-username">Welcome Admin!</h2>
+        <h2 class="dashboard-username">Welcome Customer!</h2>
         <a href="#" class="btn btn-danger" role="button">Logout</a>
     </div>
 </section>
@@ -18,7 +18,9 @@
                 <div class="list-group">
 
                     <a href="buyer.php"><button type="button" class="list-group-item list-group-item-action menu-active">Dashboard</button></a>
-                    <a href="buyer-purchased.php"><button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
+                   
+                    <a href="buyer-purchased.php"><button type="button" class="list-group-item list-group-item-action ">Orders</button></a>
+                    
                     <a href="buyer-edit.php"><button type="button" class="list-group-item list-group-item-action">Edit Profile</button></a>
 
 
@@ -29,13 +31,27 @@
 
 
         </div>
+        <script>
+            window.addEventListener("load", function() {
+                $.ajax({
+                    type: "GET", 
+                    url: './buyer_dash.php',
+                    success: function(response) {
+                        var data = response.split(",");
+                        
+                        $('#order').html(data[2]);
+                        
+                    }
+                });
+            });
+        </script>
         <div class="col-9 dashboard-overview d-flex justify-content-center align-items-center pt-5">
-
-            <div style="background-color: #f1c40f;">
-                <h2>Purchased</h2>
-                <h3>10</h3>
+           
+            <div style="background-color: #8e44ad;">
+                <h2>Orders</h2>
+                <h3 id="order"></h3>
             </div>
-
+            
 
 
         </div>

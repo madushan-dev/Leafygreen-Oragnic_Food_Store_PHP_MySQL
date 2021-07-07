@@ -31,6 +31,17 @@
 
 
         </div>
+        <script>
+            window.addEventListener("load", function() {
+                $.ajax({
+                    type: "GET", 
+                    url: './admin-stores.php',
+                    success: function(response) {
+                        $('#stores').html(response);
+                    }
+                });
+            });
+        </script>
         <div class="col-9 dashboard-orders dashboard-table">
 
             <table class="table table-hover order-table ">
@@ -44,55 +55,8 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">5</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td class="tools"><i class="fa fa-pencil-square-o edit px-2"></i> <i class="fa fa-window-close-o delete px-2"></i></td>
-                    </tr>
+                <tbody id="stores">
+                    
                 </tbody>
             </table>
 

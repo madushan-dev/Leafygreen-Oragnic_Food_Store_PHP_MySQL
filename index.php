@@ -47,7 +47,7 @@
                     while ($row = mysqli_fetch_assoc($category_result)) {
                     ?>
 
-                        <button type="button" class="list-group-item list-group-item-action" name="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></button>
+                        <a href="category.php?cat=<?php echo ($row['c_id']) ?>"><button type="button" class="list-group-item list-group-item-action" name="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></button></a>
 
                     <?php } ?>
 
@@ -87,189 +87,70 @@
         </div>
     </div>
 </section>
+<!--------- organic foods products--------->
 
+<section class="foods space ">
+    <div class="row">
+        <h2 class="category-title">Latest Oragnic Vegitables </h2>
+
+        <div class="product-row">
+        <?php
+                    $vegitable_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='2' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
+                    $vegitalble_result = mysqli_query($conn, $vegitable_query);
+                    while ($row = mysqli_fetch_assoc($vegitalble_result)) {
+                    ?>
+
+            <div>
+            <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
+                <small>
+                    <h4 class="row-category"><?php echo $row['store'] ?></h4>
+                </small>
+                <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
+                <p class="row-description"><?php echo $row['description'] ?></p>
+                <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
+                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+            </div>
+
+
+                    <?php } ?>
+         
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+</section>
 <!--------- organic Spices products--------->
 <section class="spices space">
     <div class="row">
         <h2 class="category-title">Latest Organic Spices </h2>
 
         <div class="product-row">
+        <?php
+                    $spice_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='1' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
+                    $spice_result = mysqli_query($conn, $spice_query);
+                    while ($row = mysqli_fetch_assoc($spice_result)) {
+                    ?>
+
             <div>
-                <img class="img-fluid" src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+                <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store']?></h4>
                 </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
+               <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
+                <p class="row-description"><?php echo $row['description'] ?></p>
+                <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
                 <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
             </div>
 
-        </div>
 
-    </div>
-
-
-
-</section>
-
-<!--------- organic foods products--------->
-
-<section class="foods space ">
-    <div class="row">
-        <h2 class="category-title">Latest Oragnic Foods </h2>
-
-        <div class="product-row">
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
+                    <?php } ?>
+         
 
 
         </div>
@@ -279,96 +160,40 @@
 
 
 </section>
+
+
 <!--------- organic Fruits products--------->
 
 <section class="foods space">
     <div class="row">
-        <h2 class="category-title">Latest Oragnic Foods </h2>
+        <h2 class="category-title">Latest Oragnic Fruits </h2>
 
-        <div class="product-row">
+        <<div class="product-row">
+        <?php
+                    $fruit_query ="SELECT products.p_id,products.p_name,products.description,products.price,products.quantity,products.image,store.s_name as store FROM products,store WHERE p_c_id='3' AND products.p_s_id=store.s_id ORDER BY p_id DESC LIMIT 4";
+                    $fruit_result = mysqli_query($conn, $fruit_query);
+                    while ($row = mysqli_fetch_assoc($fruit_result)) {
+                    ?>
+
             <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
+            <img class="img-fluid" src="images/products/<?php echo $row['image']?>" alt="">
                 <small>
-                    <h4 class="row-category">Spices</h4>
+                    <h4 class="row-category"><?php echo $row['store'];?></h4>
                 </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
+                <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
+                <p class="row-description"><?php echo $row['description'] ?></p>
+                <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
                 <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
             </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
-            <div>
-                <img src="https://www.astaspice.org/wordpress/wp-content/uploads/2014/01/iStock_000065823839_Large.jpg" alt="">
-                <small>
-                    <h4 class="row-category">Spices</h4>
-                </small>
-                <h3 class="row-title">Oragnic Spices 1KG</h3>
-                <p class="row-description">Fresh organic spices for cheap and good prices</p>
-                <p class="row-price">රු. 1,520.00</p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-            </div>
+
+
+            <?php } ?>
+         
 
 
         </div>
+
+    </div>
 
     </div>
 
