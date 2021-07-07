@@ -4,7 +4,9 @@
 <section class="bottom-header ">
     <div class="user-bar d-flex justify-content-between align-items-center">
         <h2 class="dashboard-username">Welcome Customer!</h2>
-        <a href="#" class="btn btn-danger" role="button">Logout</a>
+        <form action="./logout.php" method="post">
+            <button type="submit" class="btn btn-danger"> Logout</button>
+        </form>
     </div>
 </section>
 
@@ -15,10 +17,9 @@
 
                 <div class="list-group">
 
-                    <a href="buyer.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
+                    <a href="buyer_dash.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
                     
                     <a href="buyer-purchased.php"><button type="button" class="list-group-item list-group-item-action">Orders</button></a>
-                    
                     
                     <a href="buyer-edit.php"><button type="button" class="list-group-item list-group-item-action menu-active">Edit Profile</button></a>
 
