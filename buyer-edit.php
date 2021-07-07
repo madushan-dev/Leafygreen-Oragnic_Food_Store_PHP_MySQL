@@ -17,7 +17,7 @@
 
                 <div class="list-group">
 
-                    <a href="buyer_dash.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
+                    <a href="buyer.php"><button type="button" class="list-group-item list-group-item-action ">Dashboard</button></a>
                     
                     <a href="buyer-purchased.php"><button type="button" class="list-group-item list-group-item-action">Orders</button></a>
                     
