@@ -4,7 +4,7 @@
 <section class="bottom-header">
     <h1 class="page-heading">All Products</h1>
 </section>
-
+<p class="cart-msg"></p>
 <section class="mt-5 ">
     <div class="row">
         <div class="col-3 main-categories">
@@ -25,12 +25,7 @@
 
         </div>
 
-            <div class="price-filter mt-5">
-
-
-                <label for="customRange1" class="form-label price-range-text">Select Price</label>
-                <input type="range" class="form-range" id="customRange1">
-            </div>
+           
         </div>
         <div class="col-9">
             <div class="product-row shop-products">
@@ -48,7 +43,7 @@
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
                 <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                <a pid="<?php echo $row['p_id'];?>" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
             </div>
                    <?php $last =  $row['p_id'];?>    
 

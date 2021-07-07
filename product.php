@@ -21,7 +21,7 @@ $description=$row['description'];
 <section class="bottom-header">
     <h1 class="page-heading"><?php echo $name?></h1>
 </section>
-
+<p class="cart-msg"></p>
 <section class="mt-5 ">
     <div class="row ">
         <div class="col-5">
@@ -34,7 +34,7 @@ $description=$row['description'];
             <p>Vendor: <?php echo $vendor?></p>
             <form action="" class="form quantity-selector my-4">
                 <label for="quantity">Select Quantity</label>
-                <select name="quantity" id="quantity">
+                <select id="quantity-dropdown" name="quantity" id="quantity">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -42,9 +42,9 @@ $description=$row['description'];
                     <option value="5">5</option>
                 </select>
 
-            </form>
-            <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
-
+                </form>
+            <a pid="<?php echo $pid;?>"  class="btn btn-success btn-lg px-4 py-3 add-to-cart-product-page" role="button">Add to cart</a>
+          
         </div>
         <div class="product-description mt-5">
             <h2>Description</h2>
@@ -62,3 +62,35 @@ $description=$row['description'];
 <!-- Including Footer -->
 <?php include_once 'resources/footer.php'; ?>
 <!---------------------->
+
+<script>
+
+   $(document).ready(function(){
+    var count= 1;
+    $('#quantity-dropdown').change(function(){
+        count = $(this).val();
+        console.log(count);
+
+    });
+
+    $('.add-to-cart-product-page').click(function(){
+     var pid=$(this).attr( "pid");
+     console.log(pid);
+     
+     $.ajax({
+             url:"addtocart.php",
+             method:"post",
+             data:{prid:pid,pcount:count},
+             dataType:"text",
+             success:function(data)
+             {
+                 $('.cart-msg').html(data);
+                 $('.cart-msg').fadeOut(3000);
+             }
+             
+         });
+  
+ });
+   });
+
+</script>

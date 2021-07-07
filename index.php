@@ -88,6 +88,7 @@
         </div>
     </div>
 </section>
+<p class="cart-msg"></p>
 <!--------- organic foods products--------->
 
 <section class="foods space ">
@@ -109,7 +110,8 @@
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
                 <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                <a pid="<?php echo $row['p_id'];?>" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                
             </div>
 
 
@@ -146,7 +148,8 @@
                <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
                 <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                <a pid="<?php echo $row['p_id'];?>" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+               
             </div>
 
 
@@ -184,7 +187,8 @@
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
                 <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                <a pid="<?php echo $row['p_id'];?>" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+             
             </div>
 
 
@@ -210,7 +214,8 @@
 <!---------------------->
 
 <script>
- 
+//  Handle Search
+
 $(document).ready(function(){
     var cat= "all";
     $('#cat').change(function(){

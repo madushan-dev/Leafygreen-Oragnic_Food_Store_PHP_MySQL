@@ -14,7 +14,7 @@
 <h2><?php echo $total?> Products Available </h2>
 </section>
 
-
+<p class="cart-msg"></p>
 
 <section class="mt-5 ">
     <div class="row">
@@ -53,7 +53,7 @@
                 <h3 class="row-title"><a href="product.php?pid=<?php echo $row['p_id']?>"><?php echo $row['p_name'] ?></a></h3>
                 <p class="row-description"><?php echo $row['description'] ?></p>
                 <p class="row-price">රු. <?php echo $row['price'].".00" ?></p>
-                <a href="#" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
+                <a pid="<?php echo $row['p_id'];?>" class="btn btn-success btn-lg px-4 py-3 add-to-cart" role="button">Add to cart</a>
             </div>
                    <?php $last =  $row['p_id'];?>    
 

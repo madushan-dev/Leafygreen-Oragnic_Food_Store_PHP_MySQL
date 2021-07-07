@@ -171,6 +171,20 @@ a {
   font-size: 1.5rem !important;
 }
 
+.cart-msg {
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 9999999;
+}
+
 .footer button {
   background-color: green;
 }
@@ -584,4 +598,7 @@ textarea {
 }
 .result:last-child {
   border-bottom: none;
+}
+.cart-delete {
+  cursor: pointer;
 }
