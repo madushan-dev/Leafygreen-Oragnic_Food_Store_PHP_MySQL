@@ -32,7 +32,7 @@
         </div>
         <div class="col-9 dashboard-orders dashboard-profile-edit">
 
-            <form>
+            <form name="add">
                 <div class="form-group">
                     <label for="name">Product Name</label>
                     <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Product Name">
@@ -53,27 +53,49 @@
                     <label for="qty">Quantity</label>
                     <input type="text" class="form-control" id="qty" placeholder="Enter Quantity">
                 </div>
+
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" onclick="UpdateDetails()">Submit</button>
+                    <label for="qty">Category</label>
+                    <select name="category" id="category" class="form-select form-control p-3 py-3">
+                    <?php
+                    
+                    $category_query = "SELECT * FROM category";
+                    $category_result = mysqli_query($conn, $category_query);;
+                    while ($row = mysqli_fetch_assoc($category_result)) {
+                    ?>
+
+                        <option style="font-size:16px;" value="<?php echo ($row['c_id']) ?>"><?php echo ($row['c_name']) ?></option>
+
+                    <?php } ?>
+                    ?>
+                    
+                    
+                    </select>
                 </div>
 
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="UpdateDetails()">Submit</button>
+                </div>
+                <p class="cart-msg"></p>
 
             </form>
-
+<div id="result"></div>
             <script>
             function UpdateDetails() {
                 var val1 = $('#name').val();
                 var val2 = $('#desc').val();
                 var val3 = $('#price').val();
                 var val4 = $('#qty').val();
+                var val5=  $('#category').val();
                 $.ajax({
                     type: 'POST',
-                    url: './seller_addProduct.php',
-                    data: { name: val1, desc: val2, price: val3, qty: val4 },
+                    url: 'handle-add-product.php',
+                    data: { name: val1, desc: val2, price: val3, qty: val4,cat:val5 },
                     success: function(response) {
-                        $('#result').html(response);
+                        $('.cart-msg').html(response);
                     }
                 });
+            
             }
 
             </script>
