@@ -6,7 +6,10 @@
 <section class="bottom-header ">
     <div class="user-bar d-flex justify-content-between align-items-center">
         <h2 class="dashboard-username">Welcome Admin!</h2>
-        <a href="#" class="btn btn-danger" role="button">Logout</a>
+        <form action="./logout.php" method="post">
+            <button type="submit" class="btn btn-danger"> Logout</button>
+        </form>
+        
     </div>
 </section>
 
