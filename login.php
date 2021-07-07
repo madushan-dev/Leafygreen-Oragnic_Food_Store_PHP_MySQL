@@ -3,6 +3,7 @@
     session_start();
     $_SESSION["storeimg"] = "default-store.png";
 ?>
+<!-- edited -->
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
 <!---------------------->

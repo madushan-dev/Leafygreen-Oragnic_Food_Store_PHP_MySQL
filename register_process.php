@@ -1,6 +1,7 @@
 <?php
 #Ajax need seperate php to handle the requests cz it returns all php elements including html as the server response
 
+#edited
 #Starting sessions
 session_start();
 
