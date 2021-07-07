@@ -47,7 +47,7 @@ include_once 'resources/db.php';
                     $stphone = $_POST["storephone"];
                     $stdes = $_POST["storedes"];
                     $storeuid = $_SESSION["userID"];
-                    $stimage = $_POST["storeimage"];
+                    $stimage = $_SESSION["storeimg"];
     
                     if ($store_stmt->execute() === TRUE) {
                         echo("storesuccess");
