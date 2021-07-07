@@ -8,7 +8,9 @@ session_start();
 include_once 'resources/db.php';
 
 #PHP for send data to the DB
-    
+
+#edited
+
     $id = $_POST["id"];
     $pn = $_POST["pn"];
     $name = $_POST["name"];
