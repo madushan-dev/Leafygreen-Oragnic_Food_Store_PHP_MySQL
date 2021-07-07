@@ -20,9 +20,8 @@
                     <a href="seller-products.php"><button type="button" class="list-group-item list-group-item-action ">Products</button></a>
                     <a href="seller-orders.php"> <button type="button" class="list-group-item list-group-item-action ">Orders</button></a>
                     <a href="seller-purchased.php"> <button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
-                    <a href="seller-edit.php"> <button type="button" class="list-group-item list-group-item-action menu-active">Edit Profile</button></a>
-                    <a href="seller_addProduct.php"> <button type="button" class="list-group-item list-group-item-action menu">Add Product</button></a>
-
+                    <a href="seller-edit.php"> <button type="button" class="list-group-item list-group-item-action menu">Edit Profile</button></a>
+                    <a href="seller_addProduct.php"> <button type="button" class="list-group-item list-group-item-action menu-active">Add Product</button></a>
 
                 </div>
 
@@ -35,24 +34,24 @@
 
             <form>
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Name">
+                    <label for="name">Product Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Enter Product Name">
 
                 </div>
                 <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="desc">Description</label>
+                    <input type="text" class="form-control" id="desc" aria-describedby="name" placeholder="Enter Discription">
 
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="text" class="form-control" id="phone" aria-describedby="name" placeholder="Enter Phone Number">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" id="price" aria-describedby="name" placeholder="Enter Price">
 
                 </div>
 
                 <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <label for="qty">Quantity</label>
+                    <input type="text" class="form-control" id="qty" placeholder="Enter Quantity">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" onclick="UpdateDetails()">Submit</button>
@@ -64,13 +63,13 @@
             <script>
             function UpdateDetails() {
                 var val1 = $('#name').val();
-                var val2 = $('#email').val();
-                var val3 = $('#phone').val();
-                var val4 = $('#password').val();
+                var val2 = $('#desc').val();
+                var val3 = $('#price').val();
+                var val4 = $('#qty').val();
                 $.ajax({
                     type: 'POST',
-                    url: './seller_editprofile.php',
-                    data: { name: val1, email: val2, phone: val3, password: val4 },
+                    url: './seller_addProduct.php',
+                    data: { name: val1, desc: val2, price: val3, qty: val4 },
                     success: function(response) {
                         $('#result').html(response);
                     }
