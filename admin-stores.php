@@ -23,54 +23,49 @@ include_once 'resources/db.php';
             <td>".$row["s_phone_number"]."</td>
             <td>".$row["name"]."</td>
             <td class='tools'>
-            <button id='p".$row["s_id"]."' type='button' class='btn btn-primary bg-warning' data-toggle='modal' data-target='#exampleModalCenter'>
+            <button id='p".$row["s_id"]."' type='button' class='btn btn-primary bg-warning' data-toggle='modal' data-target='#exampleModalCenter".$row["s_id"]."'>
             <i class='fa fa-pencil-square-o edit px-2 text-dark'></i>
             </button>
 
-            <div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+            <div class='modal fade' id='exampleModalCenter".$row["s_id"]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
             <div class='modal-dialog modal-dialog-centered' role='document'>
                 <div class='modal-content'>
                 <div class='modal-header'>
-                    <h5 class='modal-title' id='exampleModalLongTitle'>Edit Product Details</h5>
+                    <h5 class='modal-title' id='exampleModalLongTitle'>Edit Store Details</h5>
                     <button type='button' class='close btn btn-secondary bg-danger' data-dismiss='modal' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                     </button>
                 </div>
                 <div class='modal-body'>
-                    ...
+                        Store Name&emsp;<input type='text' id='des".$row["s_id"]."' placeholder='".$row["s_name"]."'><br><br>
+                        Description&emsp;<input type='text' id='pr".$row["s_id"]."' placeholder='".$row["s_description"]."'><br><br>
+                        Phone Number&emsp;<input type='text' id='ph".$row["s_id"]."' placeholder='".$row["s_phone_number"]."'><br><br>
+                        <p id='result'></p>
                 </div>
                 <div class='modal-footer'>
                     <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                    <button type='button' class='btn btn-primary'>Save changes</button>
-                </div>
-                </div>
-            </div>
-            </div>
-            
-            <button id='p".$row["s_id"]."' type='button' class='btn btn-primary bg-danger' data-toggle='modal' data-target='#exampleModalCenter'>
-            <i class='fa fa-window-close-o delete px-2 text-light'></i></td>
-            </button>
+                    <button type='button' class='btn btn-primary'  onclick='UpdateDetails".$row["s_id"]."()'>Save changes</button>
+                    <script>
+                        function UpdateDetails".$row["s_id"]."() {
+                            var val1 = $('#ph".$row["s_id"]."').val();
+                            var val2 = $('#des".$row["s_id"]."').val();
+                            var val4 = $('#pr".$row["s_id"]."').val();
+                            var val5 = ".$row["s_id"].";
+                            $.ajax({
+                                type: 'POST',
+                                url: './admin-storesEdit.php',
+                                data: { pn: val1, name: val2, desc: val4, id: val5 },
+                                success: function(response) {
+                                    alert(response);
+                                    window.location.href = './stores.php';
+                                }
+                            });
+                        }
 
-            <div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
-            <div class='modal-dialog modal-dialog-centered' role='document'>
-                <div class='modal-content'>
-                <div class='modal-header'>
-                    <h5 class='modal-title' id='exampleModalLongTitle'>Delete product</h5>
-                    <button type='button' class='close btn btn-secondary bg-danger' data-dismiss='modal' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>
-                <div class='modal-body'>
-                    Are you sure you want to delete this product?<br>
-                    product name : ".$row["name"]."
-                </div>
-                <div class='modal-footer'>
-                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                    <button type='button' class='btn btn-primary'>Save changes</button>
+                    </script>
+                    
                 </div>
                 </div>
-            </div>
-            </div>
         </tr>
     
         ";
