@@ -37,7 +37,6 @@
                         $('#order').html(data[0]);
                         $('#product').html(data[1]);
                         $('#revenue').html("Rs. "+data[2]);
-                        $('#profit').html("Rs. "+data[3]);
                     }
                 });
             });
