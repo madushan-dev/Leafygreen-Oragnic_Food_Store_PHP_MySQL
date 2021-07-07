@@ -45,8 +45,8 @@ include_once 'resources/db.php';
                     $store_stmt = $conn->prepare($sql);
                     $store_stmt->bind_param("sssss", $stname,$stdes,$stphone,$storeuid,$stimage);
                     $stname = $_POST["storename"];
-                    $stphone = $_POST["storephone"];
                     $stdes = $_POST["storedes"];
+                    $stphone = $_POST["storephone"];
                     $storeuid = $_SESSION["userID"];
                     $stimage = $_SESSION["storeimg"];
     
