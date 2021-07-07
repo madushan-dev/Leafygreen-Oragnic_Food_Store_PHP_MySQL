@@ -20,7 +20,7 @@
                     <a href="seller-orders.php"> <button type="button" class="list-group-item list-group-item-action ">Orders</button></a>
                     <a href="seller-purchased.php"> <button type="button" class="list-group-item list-group-item-action">My Purchased</button></a>
                     <a href="seller-edit.php"> <button type="button" class="list-group-item list-group-item-action">Edit Profile</button></a>
-
+                    <a href="seller_addProduct.php"> <button type="button" class="list-group-item list-group-item-action menu">Add Product</button></a>
 
                 </div>
 
