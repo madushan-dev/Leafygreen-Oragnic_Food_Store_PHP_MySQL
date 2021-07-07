@@ -1,7 +1,7 @@
 <?php
 #Starting sessions
 session_start();
-
+#edited
 #File upload code
 if($_FILES['file']['name'] != ''){
     $test = explode('.', $_FILES['file']['name']);

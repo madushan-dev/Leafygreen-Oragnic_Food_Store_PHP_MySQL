@@ -7,6 +7,7 @@ session_start();
 #Including DB Connection
 include_once 'resources/db.php';
 
+#edited
 #PHP for send data to the DB
     
     $sql = "SELECT email FROM users WHERE email = ?";
