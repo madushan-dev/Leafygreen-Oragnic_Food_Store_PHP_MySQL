@@ -9,7 +9,7 @@ if(isset($_SESSION['userID'])){
 
 if(isset($_POST['prdid'])){
     $ptd_id=$_POST['prdid'];
-    $update_cart="UPDATE cart SET status=0 WHERE cart_u_id='$user' AND cart_p_id='$ptd_id'";
+    $update_cart="DELETE FROM cart WHERE cart_u_id='$user' AND cart_p_id='$ptd_id'";
     $update_cart_result = mysqli_query($conn, $update_cart);
 }
 
