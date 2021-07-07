@@ -1,3 +1,8 @@
+<?php
+    #Starting sessions
+    session_start();
+    $_SESSION["storeimg"] = "default-store.png";
+?>
 <!-- Including Header -->
 <?php include_once 'resources/header.php'; ?>
 <!---------------------->
@@ -102,6 +107,7 @@
                 </div></div><div id="" class="form-group mb-5">
                     <label for="storeimage">Store Image</label>
                     <input type="file" class="form-control" id="storeimage">
+                    <span id="uploaderMsg"></span>
                 </div>`);
         }
         if ((sel.value) == "Customer") {
@@ -110,6 +116,36 @@
         }
 
     }
+
+    //Ajax file upload code
+    
+    $(document).ready(function(){
+
+        $(document).on('change','#storeimage',function(){
+        var property = document.getElementById('storeimage').files[0];
+        var image_name = property.name;
+        var image_extension = image_name.split('.').pop().toLowerCase();
+
+        var form_data = new FormData();
+        form_data.append("file",property);
+        $.ajax({
+        url:'fileUpload.php',
+        method:'POST',
+        data:form_data,
+        contentType:false,
+        cache:false,
+        processData:false,
+        beforeSend:function(){
+            $('#uploaderMsg').html('Uploading');
+        },
+            success:function(data){
+                $('#uploaderMsg').html('Done!');
+            }
+        });
+    });
+});
+
+    
 
     //Email Validation script
     function validateEmail(email) {
