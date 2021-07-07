@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
 
                 </div>
                 <div class="form-group">
@@ -30,11 +30,21 @@
                     <input type="text" class="form-control" id="phone" aria-describedby="name" placeholder="Enter Phone Number" name="phone">
 
                 </div>
+                <div class="form-group">
+                    <label for="phone">Title</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="name" placeholder="Enter Title" name="title">
 
+                </div>
                 <div class="form-group">
                     <label for="message">Message</label><br>
                     <textarea name="message" id="" class="form-control" ></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="phone">Title</label>
+                    <input type="text" class="form-control" id="title" aria-describedby="name" placeholder="Enter Title" name="title">
+
+                </div>
+
 
                 <div class="form-group">
                     <button type="submit" name="submit" class="btn btn-success px-4" rows="20">Submit</button>

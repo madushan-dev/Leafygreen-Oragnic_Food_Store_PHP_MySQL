@@ -1,11 +1,12 @@
 <?php
 include_once 'resources/db.php';
+session_start();
 
-$user="2";
 $id=$_POST['prid'];
 $msg="";
 
-if(isset($user)){
+if(isset($_SESSION['userID'])){
+    $user=$_SESSION['userID'];
 
     if(isset($_POST['pcount'])){
         $count=$_POST['pcount'];     
@@ -26,6 +27,8 @@ if(isset($user)){
     }
     echo $msg;
 }
-
+else{
+    echo'Please Login into the website';
+ }
 
 ?>

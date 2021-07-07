@@ -9,14 +9,15 @@ $conn = mysqli_connect($servername, $username, $password, $db );
 
 if(isset($_POST['submit'])){
 
-    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['message'])  )
+    if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['message']) && !empty($_POST['title'])  )
 
     $name = $_POST['name'];
     $email =$_POST['email'];
     $phone =$_POST['phone'];
     $message =$_POST['message'];
+    $title =$_POST['title'];
 
-    $query = "INSERT INTO inquiry(name, email, phone, message) VALUES ('$name', '$email', '$phone', '$message')";
+    $query = "INSERT INTO inquiry(name, email, phone, message, title) VALUES ('$name', '$email', '$phone', '$message','$title')";
 
     $result = mysqli_query($conn,$query);
     

@@ -1,5 +1,8 @@
 <!-- Including DB Connection -->
-<?php include_once 'resources/db.php'; ?>
+<?php 
+include_once 'resources/db.php';
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

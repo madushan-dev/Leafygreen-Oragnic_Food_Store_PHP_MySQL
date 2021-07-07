@@ -1,5 +1,6 @@
 <?php
 include_once 'resources/db.php';
+session_start();
 
 if($_POST["category"]=="all"){
 
